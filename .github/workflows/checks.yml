@@ -2,8 +2,8 @@
 name: checks
 on: [push]
 jobs:
-  lint:
-    name: lint
+  test-lint:
+    name: test and lint
     runs-on: ubuntu-20.04
     steps:
       - name: login into docker hub
@@ -13,5 +13,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: checkout
         uses: actions/checkout@v2
+      - name: test
+        run: docker-compose run --rm app sh -c "python -m unittest discover"
       - name: lint
         run: docker-compose run --rm app sh -c "flake8"
