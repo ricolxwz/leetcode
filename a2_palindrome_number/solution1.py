@@ -8,5 +8,6 @@ class Solution:
             x = x // 10
         return x == reverted_number or x == reverted_number // 10
 
+
 result = Solution().isPalindrome(121)
 print(result)
