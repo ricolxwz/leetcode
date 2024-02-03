@@ -1,0 +1,5 @@
+{
+    "code-runner.executorMap": {
+        "python": "docker-compose run --rm app sh -c \"python run.py\"",
+    }
+}

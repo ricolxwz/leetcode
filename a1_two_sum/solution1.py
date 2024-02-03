@@ -10,3 +10,7 @@ class Solution:
                 return [hashtable[remainder], index]
             hashtable[value] = index
         return []
+
+
+result = Solution().twoSum([2, 7, 11, 15], 9)
+print(result)
