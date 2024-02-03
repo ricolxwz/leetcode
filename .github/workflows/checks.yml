@@ -1,0 +1,17 @@
+---
+name: checks
+on: [push]
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: login into docker hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: lint
+        run: docker-compose run --rm app sh -c "flake8"
