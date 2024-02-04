@@ -6,11 +6,16 @@
 .docker
 
 # Python
-app/__pycache__/
-app/*/__pycache__/
-app/*/*/__pycache__/
-app/*/*/*/__pycache__/
 .env/
 .venv/
 env/
 venv/
+
+# Vscode
+.vscode/
+
+# Idea
+.idea/
+
+# Github
+.github/
