@@ -9,15 +9,16 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        def linked_list_to_list(head):
+            node_info = []
+            current = head
+            while current is not None:
+                node_info.append([current.val, current])
+                current = current.next
+            return node_info
         my_list = []
-        flag = list1
-        while flag is not None:
-            my_list.append([flag.val, flag])
-            flag = flag.next
-        flag = list2
-        while flag is not None:
-            my_list.append([flag.val, flag])
-            flag = flag.next
+        my_list.extend(linked_list_to_list(list1))
+        my_list.extend(linked_list_to_list(list2))
         sorted_list = sorted(my_list, key=lambda x: x[0])
         if not sorted_list:
             return None
