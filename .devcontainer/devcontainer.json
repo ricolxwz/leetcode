@@ -3,7 +3,7 @@
 {
 	"name": "DEV Container",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": { "dockerfile": "Dockerfile"},
+	"build": { "dockerfile": "../.docker/Dockerfile"},
 	"customizations": {
 		"vscode": {
 			"extensions": [
