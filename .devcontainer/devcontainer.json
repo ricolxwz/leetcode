@@ -9,7 +9,8 @@
 			"extensions": [
 				"donjayamanne.python-extension-pack",
 				"ms-python.flake8",
-				"MichaelCurrin.auto-commit-msg"
+				"MichaelCurrin.auto-commit-msg",
+				"vscode-icons-team.vscode-icons"
 			]
 		}
 	}
