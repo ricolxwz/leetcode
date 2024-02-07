@@ -9,5 +9,6 @@
 			]
 		}
 	},
-	"postCreateCommand": "git config --global --add safe.directory /workspaces/leetcode"
+	"postCreateCommand": "git config --global --add safe.directory /workspaces/leetcode",
+	"containerUser": "wenzexu"
 }
