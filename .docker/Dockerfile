@@ -15,5 +15,5 @@ RUN apk update && \
     pip install -r /tmp/requirements.txt && \
     rm -rf /tmp/requirements.txt && \
     addgroup -g $USER_GID $GROUPNAME && \
-    adduser -u $USER_UID -G $GROUPNAME -D wenzexu
+    adduser -u $USER_UID -G $GROUPNAME -D $USERNAME
 USER $USERNAME
