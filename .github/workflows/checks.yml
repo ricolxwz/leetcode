@@ -6,11 +6,23 @@ jobs:
     name: test and lint
     runs-on: ubuntu-20.04
     steps:
+      - name: configure 1password service account
+        uses: 1password/load-secrets-action/configure@v1
+        with:
+          service-account-token: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+      - name: load docker credentials
+        id: load-docker-credentials
+        uses: 1password/load-secrets-action@v1
+        with:
+          export-env: false
+        env:
+          DOCKERHUB_USERNAME: op://cli/docker/username
+          DOCKERHUB_TOKEN: op://cli/docker/credential
       - name: login into docker hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USER }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ steps.load-docker-credentials.outputs.DOCKERHUB_USER }}
+          password: ${{ steps.load-docker-credentials.outputs.DOCKERHUB_TOKEN }}
       - name: checkout
         uses: actions/checkout@v2
       - name: test
