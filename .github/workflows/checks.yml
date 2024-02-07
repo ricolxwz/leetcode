@@ -21,7 +21,7 @@ jobs:
       - name: login into docker hub
         uses: docker/login-action@v1
         with:
-          username: ${{ steps.load-docker-credentials.outputs.DOCKERHUB_USER }}
+          username: ${{ steps.load-docker-credentials.outputs.DOCKERHUB_USERNAME }}
           password: ${{ steps.load-docker-credentials.outputs.DOCKERHUB_TOKEN }}
       - name: checkout
         uses: actions/checkout@v2
