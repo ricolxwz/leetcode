@@ -1,0 +1,27 @@
+# Git
+.git
+.gitignore
+
+# Docker
+.docker
+
+# Python
+.env/
+.venv/
+env/
+venv/
+
+# Vscode
+.vscode/
+
+# Idea
+.idea/
+
+# Github
+.github/
+
+# Devcontainer
+.devcontainer/
+
+# Docker
+.docker
