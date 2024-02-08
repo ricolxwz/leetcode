@@ -13,6 +13,9 @@
 				"vscode-icons-team.vscode-icons"
 			]
 		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
